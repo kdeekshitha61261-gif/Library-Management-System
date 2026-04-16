@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Library Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>📚 Library Management System</h1>
+
+<!-- LOGIN -->
+<div id="loginBox" class="card center">
+    <h3>Login</h3>
+
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+
+    <select id="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+<div class="grid">
+
+<div class="card" onclick="show('search')">Search</div>
+<div class="card" onclick="show('issue')">Issue</div>
+<div class="card" onclick="show('return')">Return</div>
+<div class="card" onclick="show('maintenance')">Maintenance</div>
+<div class="card" onclick="show('membership')">Membership</div>
+<div class="card" onclick="show('user')">User</div>
+<div class="card" onclick="show('reports')">Reports</div>
+<div class="card" onclick="show('chart')">Chart</div>
+
+</div>
+
+<div id="moduleArea">
+
+<!-- SEARCH -->
+<div id="search" class="card hidden">
+<h3>Search Books</h3>
+<input id="searchBox">
+<button onclick="searchBook()">Search</button>
+<div id="searchResult"></div>
+</div>
+
+<!-- ISSUE -->
+<div id="issue" class="card hidden">
+<h3>Issue Book</h3>
+
+<input id="issueBook" placeholder="Book Name">
+<input id="issueAuthor" placeholder="Author" readonly>
+
+<input type="date" id="issueDate">
+<input type="date" id="returnDate">
+
+<button onclick="issueBook()">Issue</button>
+</div>
+
+<!-- RETURN -->
+<div id="return" class="card hidden">
+<h3>Return Book</h3>
+
+<input id="rBook">
+<input id="rAuthor" readonly>
+<input id="serialNo" placeholder="Serial No">
+
+<label><input type="checkbox" id="finePaid"> Fine Paid</label>
+
+<button onclick="returnBook()">Return</button>
+</div>
+
+<!-- MAINTENANCE -->
+<div id="maintenance" class="card hidden">
+<h3>Maintenance</h3>
+
+<input id="addName" placeholder="Book Name">
+<input id="addAuthor" placeholder="Author">
+
+<button onclick="addBook()">Add Book</button>
+</div>
+
+<!-- MEMBERSHIP -->
+<div id="membership" class="card hidden">
+<h3>Membership</h3>
+
+<input id="memName" placeholder="Member Name">
+
+<label><input type="radio" name="m" checked> 6 Months</label>
+<label><input type="radio" name="m"> 1 Year</label>
+<label><input type="radio" name="m"> 2 Years</label>
+
+<button onclick="membership()">Save</button>
+</div>
+
+<!-- USER -->
+<div id="user" class="card hidden">
+<h3>User Management</h3>
+
+<input id="userName" placeholder="User Name">
+
+<label><input type="radio" name="u" checked> New</label>
+<label><input type="radio" name="u"> Existing</label>
+
+<button onclick="userManage()">Submit</button>
+</div>
+
+<!-- REPORTS -->
+<div id="reports" class="card hidden">
+<h3>Reports</h3>
+<div id="reportBox">No reports yet</div>
+</div>
+
+<!-- CHART -->
+<div id="chart" class="card hidden">
+<h3>Flow Chart</h3>
+<p>Login → Search → Issue → Return → Reports</p>
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
